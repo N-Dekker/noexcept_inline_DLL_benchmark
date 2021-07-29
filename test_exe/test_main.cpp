@@ -17,6 +17,12 @@ limitations under the License.
 #define TEST_LIB_EXPORT __declspec(dllimport)
 #include "../test_library/exported_class.h"
 
+#ifdef USE_NOEXCEPT
+#  pragma message("[Info] Build using noexcept")
+#else
+#  pragma message("[Info] Build without noexcept")
+#endif
+
 int main()
 {
 	return exported_class{}.inline_get_data();

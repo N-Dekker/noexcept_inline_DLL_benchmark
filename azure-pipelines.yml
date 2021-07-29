@@ -5,12 +5,12 @@ jobs:
   steps:
   - script: |
       call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
-      MSBuild.exe noexcept_inline_DLL_benchmark.sln -p:Platform=x64 -p:Configuration=Release
       MSBuild.exe noexcept_inline_DLL_benchmark.sln -p:Platform=x64 -p:Configuration=Release_use_noexcept
+      MSBuild.exe noexcept_inline_DLL_benchmark.sln -p:Platform=x64 -p:Configuration=Release_without_noexcept
     displayName: Build with and without noexcept 
   - script: |
       type test_exe\x64\Release_use_noexcept\test_main.cod
     displayName: ASM using noexcept
   - script: |
-      type test_exe\x64\Release\test_main.cod
+      type test_exe\x64\Release_without_noexcept\test_main.cod
     displayName: ASM without noexcept

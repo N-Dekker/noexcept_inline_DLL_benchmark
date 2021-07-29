@@ -16,6 +16,8 @@ Global
 		Debug|x86 = Debug|x86
 		Release_use_noexcept|x64 = Release_use_noexcept|x64
 		Release_use_noexcept|x86 = Release_use_noexcept|x86
+		Release_without_noexcept|x64 = Release_without_noexcept|x64
+		Release_without_noexcept|x86 = Release_without_noexcept|x86
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
@@ -28,6 +30,10 @@ Global
 		{EF9CE661-0021-46F9-9424-11E8B740BEFD}.Release_use_noexcept|x64.Build.0 = Release_use_noexcept|x64
 		{EF9CE661-0021-46F9-9424-11E8B740BEFD}.Release_use_noexcept|x86.ActiveCfg = Release_use_noexcept|Win32
 		{EF9CE661-0021-46F9-9424-11E8B740BEFD}.Release_use_noexcept|x86.Build.0 = Release_use_noexcept|Win32
+		{EF9CE661-0021-46F9-9424-11E8B740BEFD}.Release_without_noexcept|x64.ActiveCfg = Release_without_noexcept|x64
+		{EF9CE661-0021-46F9-9424-11E8B740BEFD}.Release_without_noexcept|x64.Build.0 = Release_without_noexcept|x64
+		{EF9CE661-0021-46F9-9424-11E8B740BEFD}.Release_without_noexcept|x86.ActiveCfg = Release_without_noexcept|Win32
+		{EF9CE661-0021-46F9-9424-11E8B740BEFD}.Release_without_noexcept|x86.Build.0 = Release_without_noexcept|Win32
 		{EF9CE661-0021-46F9-9424-11E8B740BEFD}.Release|x64.ActiveCfg = Release|x64
 		{EF9CE661-0021-46F9-9424-11E8B740BEFD}.Release|x64.Build.0 = Release|x64
 		{EF9CE661-0021-46F9-9424-11E8B740BEFD}.Release|x86.ActiveCfg = Release|Win32
@@ -40,6 +46,10 @@ Global
 		{DA583925-5E31-45FF-AAE2-2B1066B7A77E}.Release_use_noexcept|x64.Build.0 = Release_use_noexcept|x64
 		{DA583925-5E31-45FF-AAE2-2B1066B7A77E}.Release_use_noexcept|x86.ActiveCfg = Release_use_noexcept|Win32
 		{DA583925-5E31-45FF-AAE2-2B1066B7A77E}.Release_use_noexcept|x86.Build.0 = Release_use_noexcept|Win32
+		{DA583925-5E31-45FF-AAE2-2B1066B7A77E}.Release_without_noexcept|x64.ActiveCfg = Release_without_noexcept|x64
+		{DA583925-5E31-45FF-AAE2-2B1066B7A77E}.Release_without_noexcept|x64.Build.0 = Release_without_noexcept|x64
+		{DA583925-5E31-45FF-AAE2-2B1066B7A77E}.Release_without_noexcept|x86.ActiveCfg = Release_without_noexcept|Win32
+		{DA583925-5E31-45FF-AAE2-2B1066B7A77E}.Release_without_noexcept|x86.Build.0 = Release_without_noexcept|Win32
 		{DA583925-5E31-45FF-AAE2-2B1066B7A77E}.Release|x64.ActiveCfg = Release|x64
 		{DA583925-5E31-45FF-AAE2-2B1066B7A77E}.Release|x64.Build.0 = Release|x64
 		{DA583925-5E31-45FF-AAE2-2B1066B7A77E}.Release|x86.ActiveCfg = Release|Win32
