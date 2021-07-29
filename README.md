@@ -9,13 +9,15 @@ A performance effect was reported by gast128, April 16, 2020 who wrote at
 
 > We use Visual Studio 2017 15.9.22 x64 build and we observe now that an inline / constexpr DLL exported constructor is not inlined with noexcept. 
 
-This Visual Studio project allows comparing the assember output when using `noexcept` to the assember output without `noexcept`, from a call to an inline member function of a DLL-experted class:
+This Visual Studio project allows comparing the assember output when using `noexcept` to the assember output without `noexcept`, from a call to an inline member function of a DLL-experted class ([test_exe/test_main.cpp](https://github.com/N-Dekker/noexcept_inline_DLL_benchmark/blob/main/test_exe/test_main.cpp#L34)):
 
-    return exported_class{}.inline_get_data();
+    obj.inline_get_data();
 
 It appears that when `exported_class::inline_get_data()` is marked `noexcept`, the function call is not inline-expanded, as the assembler output will then have a line like this: 
 
     00		 call	 QWORD PTR __imp_?inline_get_data@exported_class@@QEBAHXZ
+
+The test executable appears significantly slower when using `noexcept`.
 
 Which may be observed at Azure Pipelines
 [dekkerware/Pipelines/N-Dekker.noexcept_inline_DLL_benchmark](https://dev.azure.com/dekkerware/dekkerware/_build?definitionId=17)
