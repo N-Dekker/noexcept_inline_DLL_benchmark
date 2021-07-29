@@ -16,6 +16,7 @@ limitations under the License.
 
 #define TEST_LIB_EXPORT __declspec(dllimport)
 #include "../test_library/exported_class.h"
+#include <climits>
 
 #ifdef USE_NOEXCEPT
 #  pragma message("[Info] Build using noexcept")
@@ -25,5 +26,13 @@ limitations under the License.
 
 int main()
 {
-	return exported_class{}.inline_get_data();
+	constexpr exported_class obj{};
+	int sum{};
+
+	for (int i{}; i < INT_MAX; ++i)
+	{
+		sum += obj.inline_get_data();
+	}
+
+	return sum;
 }

@@ -14,3 +14,9 @@ jobs:
   - script: |
       type test_exe\x64\Release_without_noexcept\test_main.cod
     displayName: ASM without noexcept
+  - script: |
+      call x64\Release_use_noexcept\test_exe.exe
+    displayName: Run using noexcept
+  - script: |
+      call x64\Release_without_noexcept\test_exe.exe
+    displayName: Run without noexcept
