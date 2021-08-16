@@ -20,3 +20,26 @@ jobs:
   - script: |
       call x64\Release_without_noexcept\test_exe.exe
     displayName: Run without noexcept
+
+- job: VS2017
+  pool:
+    vmImage: 'VS2017-Win2016'
+  steps:
+  - script: |
+      call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+      MSBuild.exe noexcept_inline_DLL_benchmark_VS2017.sln -p:Platform=x64 /p:PlatformToolset=v141 -p:Configuration=Release_use_noexcept
+      MSBuild.exe noexcept_inline_DLL_benchmark_VS2017.sln -p:Platform=x64 /p:PlatformToolset=v141 -p:Configuration=Release_without_noexcept
+    displayName: Build with and without noexcept 
+  - script: |
+      type test_exe\x64\Release_use_noexcept\test_main.cod
+    displayName: ASM using noexcept
+  - script: |
+      type test_exe\x64\Release_without_noexcept\test_main.cod
+    displayName: ASM without noexcept
+  - script: |
+      call x64\Release_use_noexcept\test_exe.exe
+    displayName: Run using noexcept
+  - script: |
+      call x64\Release_without_noexcept\test_exe.exe
+    displayName: Run without noexcept
+
